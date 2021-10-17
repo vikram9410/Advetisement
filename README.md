@@ -1,24 +1,43 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Version --- Rails 6.1.4.1 
 
-Things you may want to cover:
 
-* Ruby version
+Advertisement Project 
+This web application allows the user to publish, edit, delete (CRUD) an advertisement. This app
+is helpful for thousands of job seekers to land their dream company.
+There are some constraints to follow-
+1. Users can't delete or edit without signup or login.
+2. Users can't post Ads without signup or login.
 
-* System dependencies
+ 
+In this app gem devise is used for user authentication, A user model to store information about users. 
 
-* Configuration
+Concepts of association is used establish connection between two Active Record models (user ,adsses )
+for ex - user has many advertisement (has_many association)
+   
 
-* Database creation
 
-* Database initialization
+Ruby on Rails deals with a Model/View/Controller (MVC) framework.
+The Model View Controller principle divides the work of an application into three separate but closely 
+cooperative subsystems.
 
-* How to run the test suite
+Model
+  adss.rb
+  application_record.rb
+  user.rb
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+View
+adsses - Main page
+devise - User Authenticity
+home - root page 
+layouts 
 
-* ...
+
+Controller
+
+  adsses_controller.rb
+  application_controller.rb
+  home_controller.rb
+
