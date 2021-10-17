@@ -22,20 +22,21 @@ Ruby on Rails deals with a Model/View/Controller (MVC) framework.
 The Model View Controller principle divides the work of an application into three separate but closely 
 cooperative subsystems.
 
-Model
+Model  
+
   adss.rb
   application_record.rb
   user.rb
 
 
-View
+View    
 adsses - Main page
 devise - User Authenticity
 home - root page 
 layouts 
 
 
-Controller
+Controller   
 
   adsses_controller.rb
   application_controller.rb
