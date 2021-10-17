@@ -40,5 +40,19 @@ Controller
 
   adsses_controller.rb
   application_controller.rb
-  home_controller.rb
+  home_controller.rb     
 
+
+Features included in this web app:
+1. User Flow:
+     a. Register
+     b. Login
+     c. Logout
+         
+2. Interface where user can
+     a. Create Advertisement
+     b. Publish Advertisement
+     c. Edit Advertisement
+     d. View Advertisement
+     e. Delete Advertisement
+3. Show All the published advertisement on the homepage for the web app
