@@ -1,0 +1,25 @@
+<br>
+<br>
+
+<p id="notice"><%= notice %></p>
+<br>
+
+<div class="jumbotron" style="background-color:lightgreen;">
+  <br>
+  <h1 class="display-4"><%= @adss.company_name %></h1>
+  <p class="lead">
+  <%= @adss.advertisement %>  |
+  <%= @adss.location %>       |
+  <%= @adss.phone_no %>
+  </p>
+  <hr class="my-4">
+  <p><%=@adss.description%></p>
+  <br>
+ 
+<%= link_to 'Edit', edit_adss_path(@adss), class:"btn btn-outline-primary" %> |
+<%= link_to 'Back', adsses_path,class:"btn btn-outline-danger" %>
+
+  <br>
+  <br>
+</div>
+

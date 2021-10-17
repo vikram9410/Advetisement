@@ -1,0 +1,56 @@
+<%= form_with(model: adss) do |form| %>
+  <% if adss.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(adss.errors.count, "error") %> prohibited this adss from being saved:</h2>
+
+      <ul>
+        <% adss.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :company_name %>
+    <%= form.text_field :company_name,
+    class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :advertisement %>
+    <%= form.text_field :advertisement,
+    class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :location %>
+    <%= form.text_field :location,
+    class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :phone_no %>
+    <%= form.text_field :phone_no,
+    class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :description %>
+    <%= form.text_field :description,
+    class:"form-control" %>
+  </div>
+  
+  
+  <div class="field form-group">
+    
+    <%= form.number_field :user_id,
+    class:"form-control",
+    value:current_user.id,
+    type: :hidden %>  
+  </div>
+  
+  <div class="actions">
+    <%= form.submit class:"btn btn-secondary" %>
+  </div>
+<% end %>

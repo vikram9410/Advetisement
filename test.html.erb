@@ -1,0 +1,68 @@
+index.html.erb
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Advertisement</h1>
+
+<table class="table table-striped table-hover table-bordered">  
+  <thead>
+    <tr>
+      <th>Company name</th>
+      <th>Advertisement</th>
+      <th>Location</th>
+      <th>Phone no</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <% @ads.each do |ad| %>
+      <tr>
+        <td><%= ad.company_name %></td>
+        <td><%= ad.advertisement %></td>
+        <td><%= ad.location %></td>
+        <td><%= ad.phone_no %></td>
+        <td><%= link_to 'Show', ad %></td>
+        <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
+        <td><%= link_to 'Destroy', ad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ads', new_ad_path ,class:"btn btn-info"%>
+
+
+show.html.erb
+
+
+<br>
+<br>
+<p id="notice"><%= notice %></p>
+
+<div class="jumbotron" style="background-color:lightgreen;">
+  <br>
+  <h1 class="display-4"><%= @ad.company_name %></h1>
+  <p class="lead">
+  <%= @ad.advertisement %>  |
+  <%= @ad.location %>       |
+  <%= @ad.phone_no %>
+  </p>
+  <hr class="my-4">
+  <p><%=@ad.description%></p>
+  <br>
+ 
+<%= link_to 'Edit', edit_ad_path(@ad), class:"btn btn-outline-primary" %> |
+<%= link_to 'Back', ads_path,class:"btn btn-outline-danger" %>
+
+  <br>
+  <br>
+</div>
+
+
+
+
+

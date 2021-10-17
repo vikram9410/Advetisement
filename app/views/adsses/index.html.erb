@@ -1,0 +1,43 @@
+
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Advertisement</h1>
+
+<table class="table table-striped table-hover table-bordered">  
+  <thead>
+    <tr>
+      <th>Company name</th>
+      <th>Advertisement</th>
+      <th>Location</th>
+      <th>Phone no</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+   
+  <tbody>
+    <% @adsses.each do |adss| %>
+      <tr>
+        <td><%= adss.company_name %></td>
+        <td><%= adss.advertisement %></td>
+        <td><%= adss.location %></td>
+        <td><%= adss.phone_no %></td>
+        <td><%= adss.description %></td>  
+        <td><%= link_to 'Show', adss,class:"btn btn-outline-success" %></td>    
+        <% if user_signed_in? && current_user.id == adss.user_id %>  
+        <td><%= link_to 'Edit', edit_adss_path(adss),class:"btn btn-outline-info" %></td>
+        <td><%= link_to 'Destroy', adss,class:"btn btn-outline-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <%end%>
+        <br>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%if user_signed_in? %>
+<%= link_to 'New Ads', new_adss_path ,class:"btn btn-info"%>
+<%end%>
